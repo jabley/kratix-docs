@@ -111,7 +111,6 @@ export function Marketplace(): JSX.Element {
   if (!showImages) {
     pipelineMktClass = "hidden"
   }
-  console.log(pipelineMktClass)
 
   return (
     <Layout
@@ -122,11 +121,17 @@ export function Marketplace(): JSX.Element {
         <header className={"text--center"}>
           <hgroup>
             <h1>Kratix Marketplace</h1>
-            <p className="text--center">Community Promises for <Link href="/">Kratix</Link>, the framework for building platforms.</p>
+            <p className="className">
+              Community <Link href="#promises">Promises</Link> and <Link href="#pmID">Pipeline Images</Link> for <Link href="/">Kratix</Link>, the framework for building platforms.
+            </p>
           </hgroup>
         </header>
+        <hr />
         <div className="root">
-          <section>
+          <section class={styles.marketplaceSection} id="promises">
+            <hgroup>
+              <h2>Promises</h2>
+            </hgroup>
             <GridList
               cellHeight={"auto"}
               className={styles.gridList}
@@ -140,11 +145,11 @@ export function Marketplace(): JSX.Element {
               ))}
             </GridList>
           </section>
+          <hr />
 
-          <section className={pipelineMktClass}>
-            <hgroup className="text--center">
+          <section className={styles.marketplaceSection} id="pmID">
+            <hgroup>
               <h2>Pipeline Images</h2>
-              <p className="text--center">Community Pipeline images for <Link href="/docs/main/reference/promises/intro">Kratix Promises</Link>.</p>
             </hgroup>
 
             <GridList
@@ -163,7 +168,7 @@ export function Marketplace(): JSX.Element {
         </div>
         <div className={clsx('text--center', 'margin-top--xl', styles.bottomText)}>
           <p>
-            Want to contribute a Promise to the Marketplace?
+            Want to contribute to the Marketplace?
             <Link href="/marketplace/contributing">Check out our guide.</Link>
           </p>
 
